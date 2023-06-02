@@ -1,0 +1,20 @@
+.sample-info {
+	border: solid 5px silver;
+	border-radius: 10px;
+	display: flex;
+	font-size: 20px;
+	margin: 10px 0;
+	padding: 10px;
+}
+
+.sample-info div {
+	width: 10%;
+}
+
+.cleaned {
+	border-color: #0cf;
+}
+
+.sampled {
+	border-color: #0f5;
+}
