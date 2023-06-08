@@ -13,7 +13,7 @@ import { ExtractionsStartComponent } from './extractions/extractions-start/extra
 import { ExtractionsComponent } from './extractions/extractions.component';
 import { ExtractionSetDetailsComponent } from './extractions/extraction-set-details/extraction-set-details.component';
 import { ExtractionEditComponent } from './extractions/extraction-edit/extraction-edit.component';
-import { SampleEditComponent } from './samples/sample-edit/sample-edit.component';
+import { SampleCreateComponent } from './samples/sample-create/sample-create.component';
 
 import { FormsModule } from '@angular/forms';
 import { SamplesComponent } from './samples/samples.component';
@@ -31,7 +31,7 @@ import { SamplesComponent } from './samples/samples.component';
     ExtractionsComponent,
     ExtractionSetDetailsComponent,
     ExtractionEditComponent,
-    SampleEditComponent,
+    SampleCreateComponent,
     SamplesComponent
   ],
   imports: [

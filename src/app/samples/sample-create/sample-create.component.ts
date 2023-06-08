@@ -5,11 +5,11 @@ import { SampleService } from '../sample/sample.service';
 import { NgForm } from '@angular/forms';
 
 @Component({
-  selector: 'app-sample-edit',
-  templateUrl: './sample-edit.component.html',
-  styleUrls: ['./sample-edit.component.css']
+  selector: 'app-sample-create',
+  templateUrl: './sample-create.component.html',
+  styleUrls: ['./sample-create.component.css']
 })
-export class SampleEditComponent {
+export class SampleCreateComponent {
   constructor(private sampleService: SampleService) {}
 
   onAddItem( form: NgForm ) {
