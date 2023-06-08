@@ -1,5 +1,5 @@
 import { ExtractionSet } from './extraction-set.model';
-import { Sample } from '../sample/sample.model';
+import { Sample } from '../../samples/sample/sample.model';
 
 export class ExtractionSetService {
 	private extractions: ExtractionSet[] = [
@@ -15,5 +15,9 @@ export class ExtractionSetService {
 
 	getExtractionSets() {
 		return this.extractions.slice();
+	}
+
+	getExtractionSet(id: number) {
+		return this.extractions[id];
 	}
 }

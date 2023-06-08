@@ -1,4 +1,4 @@
-import { Sample } from '../sample/sample.model';
+import { Sample } from '../../samples/sample/sample.model';
 
 export class ExtractionSet {
 	public name: string;

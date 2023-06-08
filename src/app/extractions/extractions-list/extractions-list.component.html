@@ -1,0 +1,10 @@
+<h2>Extractions List</h2>
+<div>
+	<button (click)="onNewExtraction()">New Extraction</button>
+</div>
+<app-extraction-set 
+	class="extraction-info" 
+	*ngFor="let extractionEl of extractions; let i = index" 
+	[extractionSet]="extractionEl"
+	[index]="i">
+</app-extraction-set>

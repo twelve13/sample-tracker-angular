@@ -1,0 +1,13 @@
+form input, form label {
+	margin-right: 20px;
+}
+
+form {
+	border-bottom: solid 5px black;
+	font-size: 18px;
+	padding-bottom: 20px;
+}
+
+button {
+	background-color: #00e1ff;
+}

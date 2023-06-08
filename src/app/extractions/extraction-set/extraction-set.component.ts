@@ -9,4 +9,5 @@ import { ExtractionSet } from './extraction-set.model';
 })
 export class ExtractionSetComponent {
   @Input() extractionSet: ExtractionSet;
+  @Input() index: number;
 }

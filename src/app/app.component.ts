@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
-import { SampleService } from './sample/sample.service';
-import { ExtractionSetService } from './extraction-set/extraction-set.service';
+import { SampleService } from './samples/sample/sample.service';
+import { ExtractionSetService } from './extractions/extraction-set/extraction-set.service';
 
 @Component({
   selector: 'app-root',

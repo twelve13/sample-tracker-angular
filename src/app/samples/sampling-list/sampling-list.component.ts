@@ -17,5 +17,10 @@ export class SamplingListComponent {
 
   ngOnInit() {
     this.samples = this.sampleService.getSamples();
+    this.sampleService.samplesChanged
+      .subscribe(
+        (samples: Sample[]) => {
+          this.samples = samples;
+        })
   }
 }
