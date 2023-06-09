@@ -10,8 +10,10 @@
 	<div>Cleaned Date</div>
 	<div>Sampled</div>
 	<div>Sampled Date</div>
+	<div></div>
 </div>
 <app-sample 
-	*ngFor="let sample of samples"
-	[sample]="sample">
+	*ngFor = "let sample of samples; let i = index"
+	[sample] = "sample"
+	[index] = "i">
 </app-sample>

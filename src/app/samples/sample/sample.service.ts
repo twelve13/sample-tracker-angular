@@ -1,8 +1,11 @@
 import { Sample } from './sample.model';
 import { EventEmitter } from '@angular/core';
+import { Subject } from 'rxjs';
 
 export class SampleService {
 	samplesChanged = new EventEmitter<Sample[]>();
+	startedEditing = new Subject<number>();
+
 	private samples: Sample[] = [
     new Sample('Sample 1', 'clean well', true, true, false, 'CC', true, '', false, ''),
     new Sample('Sample 2', '', true, false, false, 'CC', false, '', false, ''),
@@ -14,8 +17,17 @@ export class SampleService {
 		return this.samples.slice();
 	}
 
+	getSample(index: number) {
+		return this.samples[index];
+	}
+
 	addSample(sample: Sample) {
 		this.samples.push(sample);
 		this.samplesChanged.emit(this.samples.slice());
+	}
+
+	updateSample(index: number, newSample: Sample) {
+		this.samples[index] = newSample;
+		this.samplesChanged.next(this.samples.slice());
 	}
 }

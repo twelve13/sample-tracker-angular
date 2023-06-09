@@ -1,0 +1,61 @@
+<form (ngSubmit)="onUpdateSample(f)" #f="ngForm">
+	<label for="name">Sample Name</label>
+	<input 
+		type="text"
+		class="form-input"
+		id="name"
+		name="name"
+		ngModel
+		required
+	>
+	<label for="notes">Notes</label>
+	<input 
+		type="text"
+		id="notes"
+		name="notes"
+		ngModel
+	>
+	<label for="strs">STRs</label>
+	<input 
+		type="checkbox"
+		id="strs"
+		name="strs"
+		ngModel
+	>
+	<label for="mito">Mito</label>
+	<input 
+		type="checkbox"
+		id="mito"
+		name="mito"
+		ngModel
+	>
+	<label for="priority">Priority</label>
+	<input 
+		type="checkbox"
+		id="priority"
+		name="priority"
+		ngModel
+	>
+	<label for="analyst">Analyst</label>
+	<input 
+		type="text"
+		id="analyst"
+		name="analyst"
+		ngModel
+	>
+	<label for="wasCleaned">Cleaned</label>
+	<input 
+		type="checkbox"
+		id="wasCleaned"
+		name="wasCleaned"
+		ngModel
+	>
+	<label for="wasSampled">Sampled</label>
+	<input 
+		type="checkbox"
+		id="wasSampled"
+		name="wasSampled"
+		ngModel
+	>
+	<button type="submit" [disabled]="!f.valid">Save</button>
+</form>

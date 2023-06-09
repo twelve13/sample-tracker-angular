@@ -17,6 +17,7 @@ import { SampleCreateComponent } from './samples/sample-create/sample-create.com
 
 import { FormsModule } from '@angular/forms';
 import { SamplesComponent } from './samples/samples.component';
+import { SampleEditFormComponent } from './samples/sample-edit-form/sample-edit-form.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { SamplesComponent } from './samples/samples.component';
     ExtractionSetDetailsComponent,
     ExtractionEditComponent,
     SampleCreateComponent,
-    SamplesComponent
+    SamplesComponent,
+    SampleEditFormComponent
   ],
   imports: [
     BrowserModule,
