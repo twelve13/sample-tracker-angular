@@ -1,4 +1,5 @@
-<form (ngSubmit)="onUpdateSample(f)" #f="ngForm">
+<div class="form-container" [hidden]="!showForm">
+	<form (ngSubmit)="onUpdateSample(f)" #f="ngForm">
 	<label for="name">Sample Name</label>
 	<input 
 		type="text"
@@ -59,3 +60,4 @@
 	>
 	<button type="submit" [disabled]="!f.valid">Save</button>
 </form>
+</div>

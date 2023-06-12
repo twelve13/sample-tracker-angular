@@ -16,6 +16,7 @@ export class SampleEditFormComponent implements OnInit, OnDestroy {
   subscription: Subscription;
   editedSampleIndex: number;
   editedSample: Sample;
+  showForm = false;
 
   @Input() sample: Sample;
   @Input() index: number;
@@ -26,6 +27,7 @@ export class SampleEditFormComponent implements OnInit, OnDestroy {
     this.sampleService.startedEditing
     .subscribe(
       (index: number) => {
+        this.showForm = true;
         this.editedSampleIndex = index;
         this.editedSample = this.sampleService.getSample(index);
         // console.log(this.editedSample)
@@ -47,6 +49,7 @@ export class SampleEditFormComponent implements OnInit, OnDestroy {
     const value = form.value;
     const newSample = new Sample(value.name, value.notes, value.strs, value.mito, value.priority, value.analyst, value.wasCleaned, "", value.wasSampled, "");
     this.sampleService.updateSample(this.editedSampleIndex, newSample);
+    this.showForm = false;
   }
 
   ngOnDestroy() {

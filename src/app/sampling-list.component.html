@@ -1,0 +1,21 @@
+<div class="samples-container">
+	<app-sample-edit class="new-sample-form"></app-sample-edit>
+
+<h2>Sampling List</h2>
+<div class="header">
+	<div>Sample Name</div>
+	<div>Notes</div>
+	<div>STRs</div>
+	<div>Mito</div>
+	<div>Priority</div>
+	<div>Analyst</div>
+	<div>Cleaned</div>
+	<div>Cleaned Date</div>
+	<div>Sampled</div>
+	<div>Sampled Date</div>
+</div>
+<app-sample 
+	*ngFor="let sample of samples"
+	[sample]="sample">
+</app-sample>
+</div>
