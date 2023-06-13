@@ -5,9 +5,11 @@
 	<div>{{sample.mito ? "Mito" : ""}}</div>
 	<div>{{sample.isPriority ? "priority" : ""}}</div>
 	<div>{{sample.analyst}}</div>
-	<div>{{sample.wasCleaned ? "&#x2714;" : ""}}</div>
+	<div *ngIf="sample.wasCleaned">&#x2714;</div>
+	<div *ngIf="!sample.wasCleaned"><button (click)="onMarkCleaned()">Cleaned</button></div>
 	<div>{{sample.cleanedDate}}</div>
-	<div>{{sample.wasSampled ? "&#x2714;" : ""}}</div>
+	<div *ngIf="sample.wasSampled">&#x2714;</div>
+	<div *ngIf="!sample.wasSampled"><button [disabled]="!sample.wasCleaned" (click)="onMarkSampled()">Sampled</button></div>
 	<div>{{sample.sampledDate}}</div>
 	<button (click)="onEditSample(index)">Edit</button>
 </div>
