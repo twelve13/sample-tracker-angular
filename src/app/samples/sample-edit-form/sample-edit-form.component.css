@@ -6,3 +6,7 @@
 form input, form label {
 	margin-right: 20px;
 }
+
+#analyst, #cleanedDate, #sampledDate {
+	width: 60px;
+}

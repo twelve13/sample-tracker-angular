@@ -51,11 +51,25 @@
 		name="wasCleaned"
 		ngModel
 	>
+	<label for="cleanedDate">Cleaned Date</label>
+	<input 
+		type="text"
+		id="cleanedDate"
+		name="cleanedDate"
+		ngModel
+	>
 	<label for="wasSampled">Sampled</label>
 	<input 
 		type="checkbox"
 		id="wasSampled"
 		name="wasSampled"
+		ngModel
+	>
+	<label for="sampledDate">Sampled Date</label>
+	<input 
+		type="text"
+		id="sampledDate"
+		name="sampledDate"
 		ngModel
 	>
 	<button type="submit" [disabled]="!f.valid">Save</button>

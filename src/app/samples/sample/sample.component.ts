@@ -28,7 +28,7 @@ export class SampleComponent {
   onMarkSampled() {
     const date = new Date();
     const sampledDate = `${date.getMonth()}/${date.getDate()}/${date.getFullYear()}`;
-    const sampledSample = new Sample(this.sample.name, this.sample.notes, this.sample.strs, this.sample.mito, this.sample.isPriority, this.sample.analyst, this.sample.wasCleaned, this.sample.cleanedDate, this.sample.wasSampled, sampledDate);
+    const sampledSample = new Sample(this.sample.name, this.sample.notes, this.sample.strs, this.sample.mito, this.sample.isPriority, this.sample.analyst, this.sample.wasCleaned, this.sample.cleanedDate, true, sampledDate);
     this.sampleService.updateSample(this.index, sampledSample);
   }
 

@@ -30,7 +30,7 @@ export class SampleEditFormComponent implements OnInit, OnDestroy {
         this.showForm = true;
         this.editedSampleIndex = index;
         this.editedSample = this.sampleService.getSample(index);
-        // console.log(this.editedSample)
+        console.log(this.editedSample)
         this.sampleForm.setValue({
           name: this.editedSample.name,
           notes: this.editedSample.notes,
@@ -39,7 +39,9 @@ export class SampleEditFormComponent implements OnInit, OnDestroy {
           priority: this.editedSample.isPriority,
           analyst: this.editedSample.analyst,
           wasCleaned: this.editedSample.wasCleaned,
-          wasSampled: this.editedSample.wasSampled
+          cleanedDate: this.editedSample.cleanedDate,
+          wasSampled: this.editedSample.wasSampled,
+          sampledDate: this.editedSample.sampledDate
         })
       }
     );
@@ -47,7 +49,7 @@ export class SampleEditFormComponent implements OnInit, OnDestroy {
 
   onUpdateSample(form: NgForm) {
     const value = form.value;
-    const newSample = new Sample(value.name, value.notes, value.strs, value.mito, value.priority, value.analyst, value.wasCleaned, "", value.wasSampled, "");
+    const newSample = new Sample(value.name, value.notes, value.strs, value.mito, value.priority, value.analyst, value.wasCleaned, value.cleanedDate, value.wasSampled, value.sampledDate);
     this.sampleService.updateSample(this.editedSampleIndex, newSample);
     this.showForm = false;
   }
