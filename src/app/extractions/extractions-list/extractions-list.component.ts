@@ -21,9 +21,10 @@ export class ExtractionsListComponent implements OnInit {
 
   ngOnInit() {
     this.extractions = this.extractionSetService.getExtractionSets();
-  }
-
-  onNewExtraction() {
-    this.router.navigate(['new'], {relativeTo: this.route});
+    this.extractionSetService.extractionsChanged
+      .subscribe(
+        (extractions: ExtractionSet[]) => {
+          this.extractions = extractions;
+        })
   }
 }

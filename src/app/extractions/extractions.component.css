@@ -1,8 +1,8 @@
 .extractions__container {
-	display: flex;
 	padding: 50px 100px;
 }
 
 .extractions__list {
+	display: flex;
 	margin-right: 100px;
 }

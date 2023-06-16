@@ -1,7 +1,10 @@
 import { ExtractionSet } from './extraction-set.model';
+import { EventEmitter } from '@angular/core';
 import { Sample } from '../../samples/sample/sample.model';
 
 export class ExtractionSetService {
+	extractionsChanged = new EventEmitter<ExtractionSet[]>();
+
 	private extractions: ExtractionSet[] = [
     new ExtractionSet('Extraction 1', 'STR', 'CC', '', true, '', false, '', [
     	new Sample('Sample 4', 'clean well', true, true, false, 'CC', false, '', false, ''),
@@ -19,5 +22,10 @@ export class ExtractionSetService {
 
 	getExtractionSet(id: number) {
 		return this.extractions[id];
+	}
+
+	addExtractionSet(extractionSet: ExtractionSet) {
+		this.extractions.push(extractionSet);
+		this.extractionsChanged.emit(this.extractions.slice());
 	}
 }

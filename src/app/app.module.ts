@@ -9,9 +9,9 @@ import { SamplingListComponent } from './samples/sampling-list/sampling-list.com
 import { ExtractionsListComponent } from './extractions/extractions-list/extractions-list.component';
 import { ExtractionSetComponent } from './extractions/extraction-set/extraction-set.component';
 import { ArchiveListComponent } from './archive-list/archive-list.component';
-import { ExtractionsStartComponent } from './extractions/extractions-start/extractions-start.component';
 import { ExtractionsComponent } from './extractions/extractions.component';
 import { ExtractionSetDetailsComponent } from './extractions/extraction-set-details/extraction-set-details.component';
+import { ExtractionCreateComponent } from './extractions/extraction-create/extraction-create.component';
 import { ExtractionEditComponent } from './extractions/extraction-edit/extraction-edit.component';
 import { SampleCreateComponent } from './samples/sample-create/sample-create.component';
 
@@ -28,13 +28,13 @@ import { SampleEditFormComponent } from './samples/sample-edit-form/sample-edit-
     ExtractionsListComponent,
     ExtractionSetComponent,
     ArchiveListComponent,
-    ExtractionsStartComponent,
     ExtractionsComponent,
     ExtractionSetDetailsComponent,
     ExtractionEditComponent,
     SampleCreateComponent,
     SamplesComponent,
-    SampleEditFormComponent
+    SampleEditFormComponent,
+    ExtractionCreateComponent
   ],
   imports: [
     BrowserModule,
