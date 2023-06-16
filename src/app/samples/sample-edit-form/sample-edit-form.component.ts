@@ -24,7 +24,7 @@ export class SampleEditFormComponent implements OnInit, OnDestroy {
   constructor(private sampleService: SampleService) {}
 
   ngOnInit() {
-    this.sampleService.startedEditing
+    this.subscription = this.sampleService.startedEditing
     .subscribe(
       (index: number) => {
         this.showForm = true;
