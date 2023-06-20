@@ -8,11 +8,11 @@ export class ExtractionSetService {
 	startedEditing = new Subject<number>();
 
 	private extractions: ExtractionSet[] = [
-    new ExtractionSet('Extraction 1', 'STR', 'CC', '', true, '', false, '', [
+    new ExtractionSet('Extraction 1', 'STR', 'CC', '', true, '6/20/2023', false, '', [
     	new Sample('Sample 4', 'clean well', true, true, false, 'CC', false, '', false, ''),
     	new Sample('Sample 5', '', true, false, false, 'CC', false, '', false, ''),
     	new Sample('Sample 6', 'consume all', false, true, true, 'CC', false, '', false, '')]),
-    new ExtractionSet('Extraction 2', 'STR', 'CC', '', true, '', true, '', [
+    new ExtractionSet('Extraction 2', 'STR', 'CC', '', true, '6/20/2023', true, '6/21/2023', [
     	new Sample('Sample 7', 'clean well', true, true, false, 'CC', false, '', false, ''),
     	new Sample('Sample 8', '', true, false, false, 'CC', false, '', false, '')]),
     new ExtractionSet('Extraction 3', 'mito', 'CAB', '', false, '', false, '', [])

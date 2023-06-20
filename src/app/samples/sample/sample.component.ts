@@ -21,14 +21,14 @@ export class SampleComponent {
 
   onMarkCleaned() {
     const date = new Date();
-    const cleanedDate = `${date.getMonth()}/${date.getDate()}/${date.getFullYear()}`;
+    const cleanedDate = `${date.getMonth()+1}/${date.getDate()}/${date.getFullYear()}`;
     const cleanedSample = new Sample(this.sample.name, this.sample.notes, this.sample.strs, this.sample.mito, this.sample.isPriority, this.sample.analyst, true, cleanedDate, this.sample.wasSampled, "");
     this.sampleService.updateSample(this.index, cleanedSample);
   }
 
   onMarkSampled() {
     const date = new Date();
-    const sampledDate = `${date.getMonth()}/${date.getDate()}/${date.getFullYear()}`;
+    const sampledDate = `${date.getMonth()+1}/${date.getDate()}/${date.getFullYear()}`;
     const sampledSample = new Sample(this.sample.name, this.sample.notes, this.sample.strs, this.sample.mito, this.sample.isPriority, this.sample.analyst, this.sample.wasCleaned, this.sample.cleanedDate, true, sampledDate);
     this.sampleService.updateSample(this.index, sampledSample);
   }

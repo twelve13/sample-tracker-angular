@@ -3,7 +3,8 @@
 	border-radius: 10px;
 	font-size: 20px;
 	margin: 10px 20px;
-	padding: 10px;
+	padding: 10px 30px;
+	width: 300px;
 }
 
 .extraction-set__name {
@@ -16,17 +17,4 @@
 
 .extracted {
 	border-color: #ffae00;
-}
-
-a {
-	color: #000;
-	text-decoration: none;
-	position: relative;
-}
-
-.active:before {
-	content: "\25B6";
-	position: absolute;
-	left: -50px;
-	top: 50%;
 }
