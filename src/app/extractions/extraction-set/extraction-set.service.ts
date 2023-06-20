@@ -1,9 +1,11 @@
 import { ExtractionSet } from './extraction-set.model';
 import { EventEmitter } from '@angular/core';
 import { Sample } from '../../samples/sample/sample.model';
+import { Subject } from 'rxjs';
 
 export class ExtractionSetService {
 	extractionsChanged = new EventEmitter<ExtractionSet[]>();
+	startedEditing = new Subject<number>();
 
 	private extractions: ExtractionSet[] = [
     new ExtractionSet('Extraction 1', 'STR', 'CC', '', true, '', false, '', [
@@ -27,5 +29,10 @@ export class ExtractionSetService {
 	addExtractionSet(extractionSet: ExtractionSet) {
 		this.extractions.push(extractionSet);
 		this.extractionsChanged.emit(this.extractions.slice());
+	}
+
+	updateExtractionSet(index: number, newExtractionSet: ExtractionSet) {
+		this.extractions[index] = newExtractionSet;
+		this.extractionsChanged.next(this.extractions.slice());
 	}
 }

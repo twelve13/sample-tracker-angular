@@ -8,6 +8,7 @@ import { SampleService } from '../sample/sample.service';
   templateUrl: './sample.component.html',
   styleUrls: ['./sample.component.css']
 })
+
 export class SampleComponent {
   @Input() sample: Sample;
   @Input() index: number;

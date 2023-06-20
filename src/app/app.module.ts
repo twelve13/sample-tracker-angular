@@ -4,20 +4,18 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
-import { SampleComponent } from './samples/sample/sample.component';
-import { SamplingListComponent } from './samples/sampling-list/sampling-list.component';
-import { ExtractionsListComponent } from './extractions/extractions-list/extractions-list.component';
-import { ExtractionSetComponent } from './extractions/extraction-set/extraction-set.component';
-import { ArchiveListComponent } from './archive-list/archive-list.component';
-import { ExtractionsComponent } from './extractions/extractions.component';
-import { ExtractionSetDetailsComponent } from './extractions/extraction-set-details/extraction-set-details.component';
-import { ExtractionCreateComponent } from './extractions/extraction-create/extraction-create.component';
-import { ExtractionEditComponent } from './extractions/extraction-edit/extraction-edit.component';
-import { SampleCreateComponent } from './samples/sample-create/sample-create.component';
-
 import { FormsModule } from '@angular/forms';
 import { SamplesComponent } from './samples/samples.component';
+import { SamplingListComponent } from './samples/sampling-list/sampling-list.component';
+import { SampleComponent } from './samples/sample/sample.component';
+import { SampleCreateComponent } from './samples/sample-create/sample-create.component';
 import { SampleEditFormComponent } from './samples/sample-edit-form/sample-edit-form.component';
+import { ExtractionsComponent } from './extractions/extractions.component';
+import { ExtractionsListComponent } from './extractions/extractions-list/extractions-list.component';
+import { ExtractionSetComponent } from './extractions/extraction-set/extraction-set.component';
+import { ExtractionCreateComponent } from './extractions/extraction-create/extraction-create.component';
+import { ExtractionEditFormComponent } from './extractions/extraction-edit-form/extraction-edit-form.component';
+import { ArchiveListComponent } from './archive-list/archive-list.component';
 
 @NgModule({
   declarations: [
@@ -29,12 +27,11 @@ import { SampleEditFormComponent } from './samples/sample-edit-form/sample-edit-
     ExtractionSetComponent,
     ArchiveListComponent,
     ExtractionsComponent,
-    ExtractionSetDetailsComponent,
-    ExtractionEditComponent,
     SampleCreateComponent,
     SamplesComponent,
     SampleEditFormComponent,
-    ExtractionCreateComponent
+    ExtractionCreateComponent,
+    ExtractionEditFormComponent
   ],
   imports: [
     BrowserModule,
