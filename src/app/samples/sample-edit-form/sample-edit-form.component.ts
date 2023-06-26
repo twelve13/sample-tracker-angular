@@ -54,6 +54,12 @@ export class SampleEditFormComponent implements OnInit, OnDestroy {
     this.showForm = false;
   }
 
+  onDeleteSample() {
+    console.log(this.editedSampleIndex);
+    this.sampleService.deleteSample(this.editedSampleIndex);
+    this.showForm = false;
+  }
+
   ngOnDestroy() {
     this.subscription.unsubscribe();
   }

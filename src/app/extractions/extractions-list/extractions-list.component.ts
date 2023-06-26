@@ -13,9 +13,7 @@ export class ExtractionsListComponent implements OnInit {
 
   extractions: ExtractionSet[];
 
-  constructor(private extractionSetService: ExtractionSetService, 
-          private router: Router,
-          private route: ActivatedRoute){
+  constructor(private extractionSetService: ExtractionSetService){
 
   }
 

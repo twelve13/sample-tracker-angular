@@ -30,4 +30,9 @@ export class SampleService {
 		this.samples[index] = newSample;
 		this.samplesChanged.next(this.samples.slice());
 	}
+
+	deleteSample(index: number) {
+		this.samples.splice(index, 1);
+		this.samplesChanged.next(this.samples.slice());
+	}
 }
