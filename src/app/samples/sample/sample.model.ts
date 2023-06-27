@@ -9,8 +9,9 @@ export class Sample {
 	public cleanedDate: string;
 	public wasSampled: boolean;
 	public sampledDate: string;
+	public extractionSet: string;
 
-	constructor(name: string, notes: string, strs: boolean, mito: boolean, isPriority: boolean, analyst: string, wasCleaned: boolean, cleanedDate: string, wasSampled: boolean, sampledDate: string) {
+	constructor(name: string, notes: string, strs: boolean, mito: boolean, isPriority: boolean, analyst: string, wasCleaned: boolean, cleanedDate: string, wasSampled: boolean, sampledDate: string, extractionSet: string) {
 		this.name = name;
 		this.notes = notes;
 		this.strs = strs;
@@ -21,5 +22,6 @@ export class Sample {
 		this.cleanedDate = cleanedDate;
 		this.wasSampled = wasSampled;
 		this.sampledDate = sampledDate;
+		this.extractionSet = extractionSet;
 	}
 }

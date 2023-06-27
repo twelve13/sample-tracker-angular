@@ -32,14 +32,14 @@ export class SampleComponent {
   onMarkCleaned() {
     const date = new Date();
     const cleanedDate = `${date.getMonth()+1}/${date.getDate()}/${date.getFullYear()}`;
-    const cleanedSample = new Sample(this.sample.name, this.sample.notes, this.sample.strs, this.sample.mito, this.sample.isPriority, this.sample.analyst, true, cleanedDate, this.sample.wasSampled, "");
+    const cleanedSample = new Sample(this.sample.name, this.sample.notes, this.sample.strs, this.sample.mito, this.sample.isPriority, this.sample.analyst, true, cleanedDate, this.sample.wasSampled, "", this.sample.extractionSet);
     this.sampleService.updateSample(this.index, cleanedSample);
   }
 
   onMarkSampled() {
     const date = new Date();
     const sampledDate = `${date.getMonth()+1}/${date.getDate()}/${date.getFullYear()}`;
-    const sampledSample = new Sample(this.sample.name, this.sample.notes, this.sample.strs, this.sample.mito, this.sample.isPriority, this.sample.analyst, this.sample.wasCleaned, this.sample.cleanedDate, true, sampledDate);
+    const sampledSample = new Sample(this.sample.name, this.sample.notes, this.sample.strs, this.sample.mito, this.sample.isPriority, this.sample.analyst, this.sample.wasCleaned, this.sample.cleanedDate, true, sampledDate, this.sample.extractionSet);
     this.sampleService.updateSample(this.index, sampledSample);
   }
 
@@ -55,17 +55,15 @@ export class SampleComponent {
         return extractionIndex = index;
       }
     })
-    console.log(extractionIndex);
-    console.log(this.extractions[extractionIndex].samples);
+    // console.log(extractionIndex);
+    // console.log(this.extractions[extractionIndex].samples);
     const updatedExtractionSet = this.extractions[extractionIndex];
     // console.log(this.sample)
-    updatedExtractionSet.samples.push(this.sample)
+    this.sample.extractionSet = this.extractions[extractionIndex].name;
+    updatedExtractionSet.samples.push(this.sample);
 
-    // extractionToEdit = this.extractions[i];
-    // console.log(extractionToEdit);
-    // // console.log(newExtractionSet);
-    // this.extractionSetService.updateExtractionSet(this.editedExtractionIndex, newExtractionSet);
-    // this.showForm = false;
+    // delete sample after it's assigned to an extraction
+    this.sampleService.deleteSample(this.index);
   }
 
 }

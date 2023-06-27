@@ -15,7 +15,7 @@ export class SampleCreateComponent {
   onAddItem( form: NgForm ) {
     const value = form.value;
     // console.log(value);
-    const newSample = new Sample(value.name, value.notes, value.strs, value.mito, value.priority, value.analyst, false, "", false, "");
+    const newSample = new Sample(value.name, value.notes, value.strs, value.mito, value.priority, value.analyst, false, "", false, "", null);
     this.sampleService.addSample(newSample);
   }
 }

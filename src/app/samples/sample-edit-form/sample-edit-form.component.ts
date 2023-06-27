@@ -41,7 +41,8 @@ export class SampleEditFormComponent implements OnInit, OnDestroy {
           wasCleaned: this.editedSample.wasCleaned,
           cleanedDate: this.editedSample.cleanedDate,
           wasSampled: this.editedSample.wasSampled,
-          sampledDate: this.editedSample.sampledDate
+          sampledDate: this.editedSample.sampledDate,
+          extractionSet: this.editedSample.extractionSet
         })
       }
     );
@@ -49,7 +50,7 @@ export class SampleEditFormComponent implements OnInit, OnDestroy {
 
   onUpdateSample(form: NgForm) {
     const value = form.value;
-    const newSample = new Sample(value.name, value.notes, value.strs, value.mito, value.priority, value.analyst, value.wasCleaned, value.cleanedDate, value.wasSampled, value.sampledDate);
+    const newSample = new Sample(value.name, value.notes, value.strs, value.mito, value.priority, value.analyst, value.wasCleaned, value.cleanedDate, value.wasSampled, value.sampledDate, value.extractionSet);
     this.sampleService.updateSample(this.editedSampleIndex, newSample);
     this.showForm = false;
   }

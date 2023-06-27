@@ -3,13 +3,30 @@
 	border-radius: 10px;
 	display: flex;
 	font-size: 20px;
-	margin: 10px 0;
+	margin: 15px 0;
+	max-width: 1690px;
 	padding: 10px;
 }
 
 .sample-info div {
 	text-align: center;
-	width: 9%;
+	width: 125px;
+}
+
+.sample-info div:nth-of-type(2)  {
+	width: 150px;
+}
+
+.sample-info div:nth-of-type(7) {
+	margin-left: 50px;
+}
+
+.sample-info div:nth-of-type(11) {
+	width: 250px;
+}
+
+.sample-info div:nth-of-type(12) {
+	width: 50px;
 }
 
 .cleaned {
@@ -20,6 +37,14 @@
 	border-color: #0f5;
 }
 
+select {
+	margin-right: 10px;
+}
+
 .edit-button {
-	margin-left: 30px;
+	margin-left: 70px;
+}
+
+button {
+	padding: 7px;
 }

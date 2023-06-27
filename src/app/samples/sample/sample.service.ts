@@ -7,9 +7,9 @@ export class SampleService {
 	startedEditing = new Subject<number>();
 
 	private samples: Sample[] = [
-    new Sample('Sample 1', 'clean well', true, true, false, 'CC', true, '6/1/23', false, ''),
-    new Sample('Sample 2', '', true, false, false, 'CC', false, '', false, ''),
-    new Sample('Sample 3', 'consume all', false, true, true, 'CC', true, '6/1/23', true, '6/2/23')
+    new Sample('Sample 1', 'clean well', true, true, false, 'CC', true, '6/1/23', false, '', null),
+    new Sample('Sample 2', '', true, false, false, 'CC', false, '', false, '', null),
+    new Sample('Sample 3', 'consume all', false, true, true, 'CC', true, '6/1/23', true, '6/2/23', null)
   ];
 
 	getSamples() {

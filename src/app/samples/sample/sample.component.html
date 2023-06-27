@@ -11,12 +11,16 @@
 	<div *ngIf="sample.wasSampled">&#x2714;</div>
 	<div *ngIf="!sample.wasSampled"><button [disabled]="!sample.wasCleaned" (click)="onMarkSampled()">Sampled</button></div>
 	<div>{{sample.sampledDate}}</div>
-	<form (ngSubmit)="onAssignExtraction(f)" #f="ngForm">
-		<label for="extractions">Assign:</label>
-		<select name="extraction" id="extraction" ngModel>
+	<div>
+	<form *ngIf="sample.wasSampled" (ngSubmit)="onAssignExtraction(f)" #f="ngForm" id="myform">
+		<select name="extraction" id="extraction" required ngModel>
+			<option value="">Assign</option>
 			<option *ngFor = "let extraction of extractions" [value]="extraction.name">{{ extraction.name }}</option>
 		</select>
-		<input type="submit" value="Submit">
+		<button type="submit" value="Submit" [disabled]="!f.valid">Submit</button>
 	</form>
-	<button (click)="onEditSample(index)" class="edit-button">Edit</button>
+	</div>
+	<div>
+		<button (click)="onEditSample(index)" class="edit-button">Edit</button>
+	</div>
 </div>
