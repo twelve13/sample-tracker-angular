@@ -15,7 +15,8 @@ import { ExtractionsListComponent } from './extractions/extractions-list/extract
 import { ExtractionSetComponent } from './extractions/extraction-set/extraction-set.component';
 import { ExtractionCreateComponent } from './extractions/extraction-create/extraction-create.component';
 import { ExtractionEditFormComponent } from './extractions/extraction-edit-form/extraction-edit-form.component';
-import { ArchiveListComponent } from './archive-list/archive-list.component';
+import { ArchiveListComponent } from './archive/archive-list/archive-list.component';
+import { ArchiveSampleComponent } from './archive/archive-sample/archive-sample.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { ArchiveListComponent } from './archive-list/archive-list.component';
     SamplesComponent,
     SampleEditFormComponent,
     ExtractionCreateComponent,
-    ExtractionEditFormComponent
+    ExtractionEditFormComponent,
+    ArchiveSampleComponent
   ],
   imports: [
     BrowserModule,

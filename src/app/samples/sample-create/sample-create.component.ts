@@ -17,5 +17,6 @@ export class SampleCreateComponent {
     // console.log(value);
     const newSample = new Sample(value.name, value.notes, value.strs, value.mito, value.priority, value.analyst, false, "", false, "", null);
     this.sampleService.addSample(newSample);
+    form.reset();
   }
 }

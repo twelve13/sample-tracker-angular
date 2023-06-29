@@ -1,0 +1,17 @@
+<h2>Completed Samples</h2>
+<div class="header">
+	<div>Sample Name</div>
+	<div>Notes</div>
+	<div>STRs</div>
+	<div>Mito</div>
+	<div>Priority</div>
+	<div>Analyst</div>
+	<div>Cleaned Date</div>
+	<div>Sampled Date</div>
+	<div>Extraction Set</div>
+</div>
+<app-archive-sample 
+	*ngFor = "let sample of samples; let i = index"
+	[sample] = "sample"
+	[index] = "i">
+</app-archive-sample>

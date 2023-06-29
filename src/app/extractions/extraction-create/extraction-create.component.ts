@@ -17,5 +17,6 @@ export class ExtractionCreateComponent {
     const value = form.value;
     const newExtractionSet = new ExtractionSet(value.name, value.type, value.notes, value.analyst, false, "", false, "", []);
     this.extractionSetService.addExtractionSet(newExtractionSet);
+    form.reset();
   }
 }

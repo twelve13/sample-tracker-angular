@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { SamplesComponent } from './samples/samples.component';
 import { ExtractionsComponent } from './extractions/extractions.component';
-import { ArchiveListComponent } from './archive-list/archive-list.component';
+import { ArchiveListComponent } from './archive/archive-list/archive-list.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/samples', pathMatch: "full" },

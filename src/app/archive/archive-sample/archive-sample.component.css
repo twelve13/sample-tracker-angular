@@ -1,0 +1,33 @@
+.sample-info {
+	display: flex;
+	font-size: 20px;
+	margin: 15px 0;
+	max-width: 1690px;
+	padding: 10px;
+}
+
+.sample-info div {
+	text-align: center;
+	width: 125px;
+}
+
+.sample-info div {
+	text-align: center;
+	width: 125px;
+}
+
+.sample-info div:nth-of-type(2)  {
+	width: 150px;
+}
+
+.sample-info div:nth-of-type(7) {
+	margin-left: 50px;
+}
+
+.sample-info div:nth-of-type(11) {
+	width: 250px;
+}
+
+.sample-info div:nth-of-type(12) {
+	width: 50px;
+}
