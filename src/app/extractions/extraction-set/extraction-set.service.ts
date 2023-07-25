@@ -33,6 +33,7 @@ export class ExtractionSetService {
 
 	updateExtractionSet(index: number, newExtractionSet: ExtractionSet) {
 		this.extractions[index] = newExtractionSet;
+		newExtractionSet.samples.forEach(sample => sample.extractionSet = newExtractionSet.name);
 		this.extractionsChanged.next(this.extractions.slice());
 	}
 
