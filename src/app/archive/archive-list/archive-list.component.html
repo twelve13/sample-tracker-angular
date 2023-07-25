@@ -10,8 +10,10 @@
 	<div>Sampled Date</div>
 	<div>Extraction Set</div>
 </div>
+<div class="list">
 <app-archive-sample 
 	*ngFor = "let sample of samples; let i = index"
 	[sample] = "sample"
 	[index] = "i">
 </app-archive-sample>
+</div>

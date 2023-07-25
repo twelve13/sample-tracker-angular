@@ -7,21 +7,13 @@
 
 .header div {
 	text-align: center;
-	width: 125px;
+	width: 10%;
 }
 
-.header div:nth-of-type(2)  {
-	width: 150px;
+.list >*:nth-of-type(even) {
+	color: gray;
 }
 
-.header div:nth-of-type(7) {
-	margin-left: 50px;
-}
-
-.header div:nth-of-type(11) {
-	width: 250px;
-}
-
-.header div:nth-of-type(12) {
-	width: 50px;
+h2 {
+	margin: 30px;
 }
