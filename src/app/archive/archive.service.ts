@@ -1,4 +1,6 @@
 import { Sample } from '../samples/sample/sample.model';
+import { ExtractionSet } from '../extractions/extraction-set/extraction-set.model';
+import { ExtractionSetService } from '../extractions/extraction-set/extraction-set.service';
 import { EventEmitter } from '@angular/core';
 import { Subject } from 'rxjs';
 
@@ -17,8 +19,8 @@ export class ArchiveService {
 		return this.samples.slice();
 	}
 
-	addSample(sample: Sample) {
-		this.samples.push(sample);
+	archiveExtraction(extraction: ExtractionSet) {
+		extraction.samples.forEach(sample => this.samples.push(sample));
 		this.samplesChanged.emit(this.samples.slice());
 	}
 }

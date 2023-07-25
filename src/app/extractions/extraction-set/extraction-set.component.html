@@ -12,5 +12,8 @@
 				<li *ngFor="let sample of extractionSet.samples">{{sample.name}}</li>
 			</ul>
 		</div>
-		<button (click)="onEditExtraction(index)">Edit</button>
+		<div class="buttons">
+			<button (click)="onEditExtraction(index)">Edit</button>
+			<button *ngIf="extractionSet.wasExtracted" (click)="archiveExtraction(extractionSet)">Archive</button>
+		</div>
 </div>

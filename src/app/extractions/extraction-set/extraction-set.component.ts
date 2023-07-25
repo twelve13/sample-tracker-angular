@@ -2,6 +2,7 @@ import { Component, Input } from '@angular/core';
 
 import { ExtractionSet } from './extraction-set.model';
 import { ExtractionSetService } from '../extraction-set/extraction-set.service';
+import { ArchiveService } from '../../archive/archive.service';
 
 @Component({
   selector: 'app-extraction-set',
@@ -12,7 +13,7 @@ export class ExtractionSetComponent {
   @Input() extractionSet: ExtractionSet;
   @Input() index: number;
 
-  constructor(private extractionSetService: ExtractionSetService) {}
+  constructor(private extractionSetService: ExtractionSetService, private archiveService: ArchiveService) {}
 
   onEditExtraction(index: number) {
     this.extractionSetService.startedEditing.next(index);
@@ -30,5 +31,12 @@ export class ExtractionSetComponent {
     const extractedDate = `${date.getMonth()+1}/${date.getDate()}/${date.getFullYear()}`;
     const extractionExtracted = new ExtractionSet(this.extractionSet.name, this.extractionSet.type, this.extractionSet.analyst, this.extractionSet.notes, true, this.extractionSet.bufferAddedDate, true, extractedDate, this.extractionSet.samples);
     this.extractionSetService.updateExtractionSet(this.index, extractionExtracted);
+  }
+
+  archiveExtraction(extractionSet) {
+    this.archiveService.archiveExtraction(extractionSet);
+
+    // delete extraction after samples have been added to archive
+    this.extractionSetService.deleteExtractionSet(this.index);
   }
 }
