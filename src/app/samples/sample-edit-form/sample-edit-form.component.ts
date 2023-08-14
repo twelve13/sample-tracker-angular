@@ -30,7 +30,7 @@ export class SampleEditFormComponent implements OnInit, OnDestroy {
         this.showForm = true;
         this.editedSampleIndex = index;
         this.editedSample = this.sampleService.getSample(index);
-        console.log(this.editedSample)
+        //fill in the fields of the form with the current values
         this.sampleForm.setValue({
           name: this.editedSample.name,
           notes: this.editedSample.notes,

@@ -1,9 +1,9 @@
 import { Sample } from './sample.model';
-import { EventEmitter } from '@angular/core';
 import { Subject } from 'rxjs';
 
 export class SampleService {
-	samplesChanged = new EventEmitter<Sample[]>();
+	//a Subject is a type of rxjs Observable
+	samplesChanged = new Subject<Sample[]>();
 	startedEditing = new Subject<number>();
 
 	private samples: Sample[] = [
@@ -23,11 +23,13 @@ export class SampleService {
 
 	addSample(sample: Sample) {
 		this.samples.push(sample);
-		this.samplesChanged.emit(this.samples.slice());
+		this.samplesChanged.next(this.samples.slice());
 	}
 
 	updateSample(index: number, newSample: Sample) {
+		//get the sample you're updating, set to the new sample
 		this.samples[index] = newSample;
+		//emit the updated samples
 		this.samplesChanged.next(this.samples.slice());
 	}
 

@@ -16,6 +16,7 @@ export class SampleComponent {
   @Input() sample: Sample;
   @Input() index: number;
 
+  //inform angular we will need an instance of the sample service and extraction set service, anyName: ServiceName
   constructor(private sampleService: SampleService, private extractionSetService: ExtractionSetService) {}
 
   extractions: ExtractionSet[];
@@ -26,6 +27,7 @@ export class SampleComponent {
   }
 
   onEditSample(index: number) {
+    //.next specifies what to do on successful emissions. this is part of rxjs
     this.sampleService.startedEditing.next(index);
   }
 
@@ -45,21 +47,20 @@ export class SampleComponent {
 
   onAssignExtraction(form: NgForm) {
     const value = form.value.extraction;
-    console.log(value);
+
     let extractionIndex = 0;
 
     //find index of this selected extraction set
     this.extractions.forEach((extraction, index) => {
       if(extraction.name === value){
-        // console.log(index);
         return extractionIndex = index;
       }
     })
-    // console.log(extractionIndex);
-    // console.log(this.extractions[extractionIndex].samples);
+
     const updatedExtractionSet = this.extractions[extractionIndex];
-    // console.log(this.sample)
-    this.sample.extractionSet = this.extractions[extractionIndex].name;
+
+    // this.sample.extractionSet = this.extractions[extractionIndex].name;
+    // add the sample to the selected extraction setsublim
     updatedExtractionSet.samples.push(this.sample);
 
     // delete sample after it's assigned to an extraction

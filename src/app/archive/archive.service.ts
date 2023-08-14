@@ -1,11 +1,10 @@
 import { Sample } from '../samples/sample/sample.model';
 import { ExtractionSet } from '../extractions/extraction-set/extraction-set.model';
 import { ExtractionSetService } from '../extractions/extraction-set/extraction-set.service';
-import { EventEmitter } from '@angular/core';
 import { Subject } from 'rxjs';
 
 export class ArchiveService {
-	samplesChanged = new EventEmitter<Sample[]>();
+	samplesChanged = new Subject<Sample[]>();
 	startedEditing = new Subject<number>();
 
 	private samples: Sample[] = [
@@ -21,6 +20,6 @@ export class ArchiveService {
 
 	archiveExtraction(extraction: ExtractionSet) {
 		extraction.samples.forEach(sample => this.samples.push(sample));
-		this.samplesChanged.emit(this.samples.slice());
+		this.samplesChanged.next(this.samples.slice());
 	}
 }
